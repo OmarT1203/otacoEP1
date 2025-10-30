@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="otacoEP1.Vistas.Registro"
+             Title="Registro">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label x:Name="lblUsuarioConectado" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Label Text="REGISTRO" Style="{StaticResource TituloEstilo}" />
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" Padding="5">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Fecha:" Style="{StaticResource LabelEstilo}" />
+                <DatePicker x:Name="dpFecha" Grid.Row="0" Grid.Column="1" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="País:" Style="{StaticResource LabelEstilo}" />
+                <Picker x:Name="pkPais" Grid.Row="1" Grid.Column="1">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Ecuador</x:String>
+                            <x:String>Perú</x:String>
+                            <x:String>Colombia</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Ciudad:" Style="{StaticResource LabelEstilo}" />
+                <Picker x:Name="pkCiudad" Grid.Row="2" Grid.Column="1">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Quito</x:String>
+                            <x:String>Guayaquil</x:String>
+                            <x:String>Cuenca</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Monto Inicial:" Style="{StaticResource LabelEstilo}" />
+                <Entry x:Name="txtMontoInicial" Grid.Row="3" Grid.Column="1" 
+                       Keyboard="Numeric" Placeholder="Ingrese monto inicial" />
+
+                <Button Grid.Row="4" Grid.Column="1" Text="Calcular Pago Mensual" 
+                        Clicked="CalcularPago_Clicked" />
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Pago mensual:" Style="{StaticResource LabelEstilo}" />
+                <Entry x:Name="txtPagoMensual" Grid.Row="5" Grid.Column="1" IsEnabled="False" />
+            </Grid>
+
+            <Grid RowDefinitions="Auto" ColumnDefinitions="Auto,*,Auto,*,Auto,*" Padding="5">
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre:" />
+                <Entry x:Name="txtNombre" Grid.Row="0" Grid.Column="1" Placeholder="Nombre" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Apellido:" />
+                <Entry x:Name="txtApellido" Grid.Row="0" Grid.Column="3" Placeholder="Apellido" />
+                <Label Grid.Row="0" Grid.Column="4" Text="Edad:" />
+                <Entry x:Name="txtEdad" Grid.Row="0" Grid.Column="5" Keyboard="Numeric" Placeholder="Edad" />
+            </Grid>
+
+            <Button Text="Ver Resumen" Clicked="VerResumen_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+

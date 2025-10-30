@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="otacoEP1.Vistas.Login"
+             Title="Login">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Image Source="https://pbs.twimg.com/profile_images/1610329408706908169/wkWxkbvt_400x400.jpg" HeightRequest="100" HorizontalOptions="Center" />
+
+        <Label Text="INICIO DE SESIÓN" Style="{StaticResource TituloEstilo}" />
+
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*" Padding="10">
+            <Label Grid.Row="0" Grid.Column="0" Text="Usuario:" />
+            <Entry x:Name="txtUsuario" Grid.Row="0" Grid.Column="1" Placeholder="Ingrese usuario" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Contraseña:" />
+            <Entry x:Name="txtContrasena" Grid.Row="1" Grid.Column="1" Placeholder="Ingrese contraseña" IsPassword="True" />
+        </Grid>
+
+        <Button Text="Iniciar Sesión" Clicked="IniciarSesion_Clicked" />
+
+    </VerticalStackLayout>
+</ContentPage>
