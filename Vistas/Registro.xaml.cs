@@ -32,7 +32,7 @@ public partial class Registro : ContentPage
             return;
         }
 
-        // Cálculo: (1500 - x) / 4 + 4% del costo total
+
         double restante = COSTO_CURSO - montoInicial;
         double cuotaBase = restante / 4;
         double interesPorCuota = COSTO_CURSO * 0.04;
